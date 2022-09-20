@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-image:url(/media/euclid_info_img/scp_euclid.jpeg); color:white; background-size:100%; background-attachment: fixed;">
+    <h1 style="text-align:center;">Объект класса Евклид</h1>
+    <hr style="width:100%;">
+
+    <div style="text-align:center; border: 4px solid black; border-radius:2%; background: rgba(102, 102, 102, 0.5);">
+    {% for euclid in scp_euclid %}
+        {% if euclid.image %}
+        <div style="border:0px solid black;  width:100%; height:90%;">
+            <img src="{{ euclid.image.url }}" name="file" alt="..." style="width:13%; height:20%; float:left">
+        <h1> {{ euclid.title_object }} </h1>
+           <h3> {{ euclid.description }}</h3>
+        <div style="border-style: outset; width:5%; height:5%; margin-left:50%; background-color:grey;"> <a href="{% url 'euclid-delete' euclid.id %}" style=" color:black;">Удалить</a></div>
+
+        </div>
+            {% endif %}
+
+        <hr style="100%; color:white;">
+            <p></p>
+            <p></p>
+        {% endfor %}
+</div>
+</body>
+</html>

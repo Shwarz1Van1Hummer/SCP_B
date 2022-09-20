@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-image:url(/media/main_page/thaumiell.jpg); color:white; background-size:100%; background-attachment: fixed;">
+    <h1 style="text-align:center;">Объект класса Таумиель</h1>
+    <hr style="width:100%;">
+
+    <div style="text-align:center; border: 4px solid black; border-radius:2%; background: rgba(102, 102, 102, 0.5);">
+    {% for thaumiel in scp_thaumiel %}
+        {% if thaumiel.image %}
+        <div style="border:0px solid black;  width:100%; height:90%;">
+            <img src="{{ euclid.image.url }}" name="file" alt="..." style="width:13%; height:20%; float:left">
+        <h1> {{ thaumiel.title_object }} </h1>
+           <h3> {{ thaumiel.description }}</h3></div>
+            {% endif %}
+
+        <hr style="100%; color:white;">
+            <p></p>
+            <p></p>
+        {% endfor %}
+</div>
+</body>
+</html>
